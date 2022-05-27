@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<a href="/"><img th:src="@{/images/PTIT.jpg}" style="height: 100px; width: 200px;" /></a>
+	<h1>Danh sach thanh vien</h1>
+	<br />
+	<table cellpadding="5" border="1">
+		<tr valign="top">
+			<th> Mã lớp</th>
+			<th> Mã Môn Học </th>
+			<th> Tên Môn Học </th>
+			<th> Tên Giảng Viên </th>
+			<th> Sĩ số </th>
+		</tr>
+		<tr th:each="value: ${values}">
+			<td th:text="${value.ma_lop}"></td>
+			<td th:text="${value.ma_mon_hoc.ma_mon_hoc}"></td>
+			<td th:text="${value.ma_mon_hoc.ten}"></td>
+			<td th:text="${value.ma_giang_vien.ten}"></td>
+			<td th:text="${value.si_so}"></td>
+		</tr>
+	</table>
+	<br />
+</body>
+
+</html>

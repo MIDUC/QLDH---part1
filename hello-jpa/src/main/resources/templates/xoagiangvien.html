@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>TH2</title>
+</head>
+
+<body>
+	<p>Are you sure you want to delete this Giang Vien!</p>
+
+
+	<form method="POST" th:object="${giangvien}">
+
+		<h3>Mã: </h3>
+		<span th:text="${giangvien.ma_giang_vien}" /> <br />
+		<h3>Tên: </h3>
+		<span th:text="${giangvien.ten}" /> <br />
+		<h3>Mã khoa: </h3>
+		<span th:text="${giangvien.ma_khoa.ma_khoa}" /><br />
+		<br />
+		<button type="submit">Yes</button>
+		<button type="button"><a href="/giangvien" style="text-decoration: none">No</a></button>
+
+</body>
+
+</html>

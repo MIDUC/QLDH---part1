@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<a href="/"><img th:src="@{/images/PTIT.jpg}" style="height: 100px; width: 200px;" /></a>
+	<h1>Danh sach thanh vien</h1>
+	<form th:action="@{/thanhvien/search}" method="get">
+		<h3>Tim kiem theo tên thanh vien</h3>
+		<input type="search" name="keyword" /> <br /> <br /> <input
+			type="submit" value="Search">
+		</button>
+	</form>
+	<br />
+	<table cellpadding="5" border="1">
+		<tr valign="top">
+			<th>Mã Sinh Viên</th>
+			<th>Tên Sinh Viên</th>
+			<th> Tên Môn Học </th>
+			<th> Tên Giảng Viên </th>
+		</tr>
+		<tr th:each="value: ${values}">
+			<td th:text="${value.ma_sinh_vien.ma_sinh_vien}"></td>
+			<td th:text="${value.ma_sinh_vien.ten}"></td>
+			<td th:text="${value.ma_lop.ma_mon_hoc.ten}"></td>
+			<td th:text="${value.ma_lop.ma_giang_vien.ten}"></td>
+		</tr>
+	</table>
+	<br />
+	<button>
+		<a href="/thanhvien/dangkylop" style="text-decoration: none;">Đăng ký lớp</a>
+	</button>
+</body>
+
+</html>

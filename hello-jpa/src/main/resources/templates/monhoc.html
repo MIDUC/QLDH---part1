@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="/"><img th:src="@{/images/PTIT.jpg}"
+		style="height: 100px; width: 200px;" /></a>
+
+	<h1>Danh sách môn học</h1>
+	<form th:action="@{/monhoc/search}" method="get">
+		<h3>Tim kiem theo tên môn học</h3>
+		<input type="search" name="keyword" /> <br /> <br /> <input
+			type="submit" value="Search">
+		</button>
+	</form>
+	<br />
+	<table cellpadding="5" border="1">
+		<tr valign="top">
+			<th>Mã môn học</th>
+			<th>Tên môn học</th>
+			<th>Mã khoa</th>
+		</tr>
+		<tr th:each="value: ${values}">
+			<td th:text="${value.ma_mon_hoc}"></td>
+			<td th:text="${value.ten}"></td>
+			<td th:text="${value.ma_khoa.ten_khoa}"></td>
+			
+		</tr>
+	</table>
+	<br />
+	<button>
+		<a href="/monhoc/themmonhoc" style="text-decoration: none;">Thêm</a>
+	</button>
+
+</body>
+</html>

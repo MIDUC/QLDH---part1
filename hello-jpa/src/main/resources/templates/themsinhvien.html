@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>Thêm Sinh Viên!</h1>
+
+	<form method="POST" th:object="${sinhvien}" >
+
+		<h3>Mã: </h3>
+		<input type="text" th:field="*{ma_sinh_vien}" /> <br />
+		<h3>Tên: </h3>
+		<input type="text" th:field="*{ten}" /> <br /> 
+		<h3>Mã khoa: </h3>
+		 <input type="text" th:field="*{ma_khoa}" /><br /> 
+		 <h3>Quê quán: </h3>
+		 <input type="text" th:field="*{Qq}" /><br /> 
+		 <h3>năm sinh: </h3>
+		 <input type="text" th:field="*{nam_sinh}" /> <br />
+		 <br />
+		<button type="submit">Thêm</button>
+
+	</form>
+</body>
+</html>

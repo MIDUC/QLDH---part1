@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Thêm Thanh Vien!</h1>
+
+	<form action="/thanhvien/dangkylop" method="POST" th:object="${thanhvien}" >
+		<h3 th:text="${mess}"></h3>
+		<h3>Mã: </h3>
+		<input type="text" th:field="*{ma_thanh_vien}" ></input> <br />
+		<h3>Mã Lớp: </h3>
+		<input type="text" th:field="*{ma_lop}" ></input> <br /> 
+		<h3>Mã Sinh Viên: </h3>
+		<input type="text" th:field="*{ma_sinh_vien}" ></input> <br />
+		 <br />
+		<button type="submit">Thêm</button>
+
+	</form>
+</body>
+</html>

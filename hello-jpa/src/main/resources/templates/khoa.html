@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<a href="/"><img th:src="@{/images/PTIT.jpg}" style="height: 100px; width: 200px;" /></a>
+	<h1>Danh sách các khoa</h1>
+	<br />
+	<table cellpadding="5" border="1">
+		<tr valign="top">
+			<th> Mã Khoa</th>
+			<th> Tên Khoa </th>
+		</tr>
+		<tr th:each="value: ${values}">
+			<td th:text="${value.ma_khoa}"></td>
+			<td th:text="${value.ten_khoa}"></td>
+		</tr>
+	</table>
+	<br />
+</body>
+
+</html>

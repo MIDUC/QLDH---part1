@@ -1,0 +1,24 @@
+div.a {
+	text-align: center;
+	left: 50%
+}
+
+.menu{
+	background-color: black;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	
+}
+.menu a{
+	
+	color:white;
+	font-size: xx-large;
+	text-decoration: none;
+	padding-left: 152px;
+	padding-right: 152px
+}
+.menu a:hover{
+	background-color: gray;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}

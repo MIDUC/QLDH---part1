@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="/"><img th:src="@{/images/PTIT.jpg}"
+		style="height: 100px; width: 200px;" /></a>
+	<h1>Danh sach giang vien</h1>
+	<form th:action="@{/giangvien/search}" method="get">
+		<h3>Tim kiem theo tên giang viên</h3>
+		<input type="search" name="keyword" /> <br /> <br /> <input
+			type="submit" value="Search">
+		</button>
+	</form>
+	<br />
+	<table cellpadding="5" border="1">
+		<tr valign="top">
+			<th>mã GV</th>
+			<th>tên GV</th>
+			<th>Tên khoa</th>
+		</tr>
+		<tr th:each="value: ${values}">
+			<td th:text="${value.ma_giang_vien}"></td>
+			<td th:text="${value.ten}"></td>
+			<td th:text="${value.ma_khoa.ten_khoa}"></td>
+			<td><a th:href="@{'/giangvien/suagiangvien/' + ${value.ma_giang_vien}}">edit</a></td>
+			<td><a th:href="@{'/giangvien/xoagiangvien/' + ${value.ma_giang_vien}}">delete</a></td>
+		</tr>
+	</table>
+	<br />
+	<button>
+		<a href="/giangvien/themgiangvien" style="text-decoration: none;">Thêm</a>
+	</button>
+</body>
+</html>

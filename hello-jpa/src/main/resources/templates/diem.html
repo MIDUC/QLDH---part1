@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<a href="/"><img th:src="@{/images/PTIT.jpg}" style="height: 100px; width: 200px;" /></a>
+	<h1>Danh sách điểm</h1>
+	<form th:action="@{/diem/search}" method="get">
+		<h3>Tim kiem theo tên sinh viên</h3>
+		<input type="search" name="keyword" /> <br /> <br /> <input
+			type="submit" value="Search">
+		</button>
+	</form>
+	<br />
+	<table cellpadding="5" border="1">
+		<tr valign="top">
+			<th> Mã Sinh Viên </th>
+			<th> Tên Sinh Viên</th>
+			<th> Mã Lớp</th>
+			<th> Tên Môn Học </th>
+			<th> Điểm </th>
+		</tr>
+		<tr th:each="value: ${values}">
+			<td th:text="${value.ma_thanh_vien.ma_sinh_vien.ma_sinh_vien}"></td>
+			<td th:text="${value.ma_thanh_vien.ma_sinh_vien.ten}"></td>
+			<td th:text="${value.ma_thanh_vien.ma_lop.ma_lop}"></td>
+			<td th:text="${value.ma_thanh_vien.ma_lop.ma_mon_hoc.ten}"></td>
+			<td th:text="${value.diem_tk}"></td>
+		</tr>
+	</table>
+	<br />
+</body>
+
+</html>
